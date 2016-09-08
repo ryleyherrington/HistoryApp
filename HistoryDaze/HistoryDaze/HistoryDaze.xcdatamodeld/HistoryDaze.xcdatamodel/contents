@@ -8,7 +8,13 @@
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wikiName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="MainArticles" representedClassName=".MainArticles" syncable="YES">
+        <attribute name="articleSlug" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasRead" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mainName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Article" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="MainArticles" positionX="-63" positionY="27" width="128" height="90"/>
     </elements>
 </model>

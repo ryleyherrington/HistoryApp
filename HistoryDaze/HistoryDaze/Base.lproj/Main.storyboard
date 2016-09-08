@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--First-->
@@ -16,7 +17,58 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-qr-jH7">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="WUf-Gf-2OY" customClass="MainArticleCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WUf-Gf-2OY" id="JmI-EQ-Ara">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of article" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-iA-kXF">
+                                                    <rect key="frame" x="8" y="8" width="538" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="TPc-Nl-TcD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="i3u-q9-U0C">
+                                                    <rect key="frame" x="562" y="10" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="8wx-Id-ooc"/>
+                                                        <constraint firstAttribute="width" constant="30" id="hVx-Vf-zkV"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i3u-q9-U0C" firstAttribute="leading" secondItem="ugs-iA-kXF" secondAttribute="trailing" constant="16" id="2OG-sA-HZG"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ugs-iA-kXF" secondAttribute="leading" id="RHJ-p0-Nec"/>
+                                                <constraint firstAttribute="topMargin" secondItem="ugs-iA-kXF" secondAttribute="top" id="e6Z-eI-WRr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="i3u-q9-U0C" secondAttribute="trailing" id="oVO-DO-K1e"/>
+                                                <constraint firstItem="i3u-q9-U0C" firstAttribute="centerY" secondItem="JmI-EQ-Ara" secondAttribute="centerY" id="rPM-rK-kUl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="articleTitleLabel" destination="ugs-iA-kXF" id="WxB-Vb-KrA"/>
+                                            <outlet property="checkmarkImage" destination="i3u-q9-U0C" id="LFb-uy-y7S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TLH-qr-jH7" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="1Er-cx-kLm"/>
+                            <constraint firstItem="TLH-qr-jH7" firstAttribute="height" secondItem="tsR-hK-woN" secondAttribute="height" id="5Jk-Vn-2T1"/>
+                            <constraint firstItem="TLH-qr-jH7" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="rN3-lC-qdy"/>
+                            <constraint firstItem="TLH-qr-jH7" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="width" id="wpN-Uz-sfP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                 </viewController>
